@@ -1,0 +1,57 @@
+version: "3.9"
+
+services:
+  grafana:
+    env_file:
+      - .env
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD}
+    networks:
+      - monitoring
+    depends_on:
+      - influxdb
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+    restart: always
+
+  influxdb:
+    env_file:
+      - .env
+    image: influxdb:latest
+    container_name: influxdb
+    healthcheck:
+      test: [ "CMD", "influx", "ping" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - monitoring
+    volumes:
+      - influxdb-data:/var/lib/influxdb
+    restart: always
+
+  ingestion:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile.ingestion
+    depends_on:
+      - influxdb
+    container_name: ingestion_app
+    networks:
+      - monitoring
+    volumes:
+      - ./data:/app/data
+
+networks:
+  monitoring:
+
+volumes:
+  influxdb-data:
