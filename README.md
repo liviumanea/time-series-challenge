@@ -21,7 +21,8 @@ be difficult to modify later until we **gain a more comprehensive understanding*
 ingestion mechanisms accounting for data volume.
 
 Furthermore, this tactic provides us with the opportunity to potentially utilize the existing technology stack as
-it stands, if deemed suitable.
+it stands, if deemed suitable and also ingest additional types of timeseries data in order to build dashboards 
+providing more insight into the functioning of the monitored infrastructure.
 
 ## Solution overview
 
