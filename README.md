@@ -14,7 +14,7 @@ efficiently storing and visualizing onto the **well-established and high-quality
 This approach aligns with the anticipated direction of the solution by providing **high quality, configurable 
 visualisations**, **optimized ingestion and fast querying** for this type of data, abilities to postprocess the
 data at query time using **time series specific functions** and also includes a flexible and complex 
-**system for creating and managing alerts** based on the time series data anticipating for the future.
+**system for creating and managing alerts** based on the time series data anticipating for future requirements.
 
 By adopting this strategy, we **maintain flexibility**, allowing us to **postpone critical decisions** that might
 be difficult to modify later until we **gain a more comprehensive understanding** of the requirements such as optimum
