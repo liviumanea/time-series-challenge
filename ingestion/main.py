@@ -1,20 +1,17 @@
 import logging
+import sys
 import time
 from contextlib import contextmanager
 from os import getenv
 from typing import ContextManager
-import functools
-import requests
-import sys
 
 import pandas as pd
-from dotenv import load_dotenv
+import requests
 from influxdb_client import InfluxDBClient, WritePrecision, WriteApi
 from influxdb_client.client.write_api import SYNCHRONOUS
 
 logging.basicConfig(level=logging.INFO)
 
-load_dotenv()
 _logger = logging.getLogger(__name__)
 
 
@@ -88,6 +85,10 @@ def main(
 
 
 if __name__ == "__main__":
+    from dotenv import load_dotenv
+
+    load_dotenv()
+
     iflux_url = getenv("APP_INFLUXDB_URL")
     iflux_token = getenv("DOCKER_INFLUXDB_INIT_ADMIN_TOKEN")
     iflux_org = getenv("DOCKER_INFLUXDB_INIT_ORG")
