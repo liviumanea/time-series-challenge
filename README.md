@@ -11,10 +11,12 @@ intricacies of the full-stack application, I have opted to focus on data ingesti
 static files. 
 
 This approach streamlines the process by leveraging the well-established and high-quality tools, InfluxDB and Grafana,
-which are renowned for their effectiveness in handling time series data and align with the anticipated direction of the
-application. By adopting this strategy, we maintain flexibility, allowing us to postpone critical decisions that might
+which are renowned for their effectiveness in handling time series data, align with the anticipated direction of the
+application and also provide facilities to create and manage alerts based on the time series data. 
+
+By adopting this strategy, we maintain flexibility, allowing us to postpone critical decisions that might
 be difficult to modify later until we gain a more comprehensive understanding of the requirements such as optimum
-ingestion mechanisms accounting for data volume. 
+ingestion mechanisms accounting for data volume.
 
 Furthermore, this tactic provides us with the opportunity to potentially utilize the existing technology stack as
 it stands, if deemed suitable.
