@@ -24,6 +24,9 @@ Furthermore, this tactic provides us with the opportunity to potentially utilize
 it stands, if deemed suitable and also ingest additional types of timeseries data in order to build dashboards 
 providing a more holistic view into the functioning of the monitored infrastructure.
 
+One final aspect to mention here is that this kind of architecture is positioned for easy migration to a 
+cloud environment should the need arise.
+
 ## Solution overview
 
 The solution comprises three main components:
