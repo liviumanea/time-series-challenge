@@ -22,7 +22,7 @@ ingestion mechanisms accounting for data volume.
 
 Furthermore, this tactic provides us with the opportunity to potentially utilize the existing technology stack as
 it stands, if deemed suitable and also ingest additional types of timeseries data in order to build dashboards 
-providing more holistic view into the functioning of the monitored infrastructure.
+providing a more holistic view into the functioning of the monitored infrastructure.
 
 ## Solution overview
 
